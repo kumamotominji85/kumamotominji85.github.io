@@ -3,204 +3,215 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ff65a3">
-  <title>김민지의 모바일 명함 ✈️</title>
+  <meta name="theme-color" content="#682638">
+  <title>김민지 | 승무원</title>
   <style>
-    * { box-sizing: border-box; }
     :root {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-      color: #46305d;
-      background: #fff3fa;
+      --burgundy: #682638;
+      --ink: #382b2e;
+      --muted: #78666b;
+      --ivory: #faf7f2;
+      --line: #ded1ce;
+      --gold: #947443;
     }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      min-height: 100svh;
       padding: 24px 18px;
-      background:
-        radial-gradient(circle at 8% 12%, #ffe394 0, transparent 35%),
-        radial-gradient(circle at 95% 55%, #c5b6ff 0, transparent 40%),
-        linear-gradient(150deg, #fff3fa, #e6faff);
+      min-height: 100svh;
+      background: #ece5e1;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont,
+        "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      word-break: keep-all;
     }
     main {
-      position: relative;
       width: 100%;
       max-width: 460px;
       min-height: calc(100svh - 48px);
       margin: auto;
-      padding: 34px 24px 24px;
+      padding: 42px 28px 28px;
       display: flex;
       flex-direction: column;
-      background: #ffffffed;
-      border: 3px solid white;
-      border-radius: 36px;
-      box-shadow: 0 18px 50px #9d65c526;
+      position: relative;
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      box-shadow: 0 20px 60px #382b2e12;
+      overflow: hidden;
     }
-    header { text-align: center; }
-    .badge {
-      display: inline-block;
-      margin: 0 0 20px;
-      padding: 10px 18px;
-      border-radius: 30px;
-      background: #fff0b8;
-      color: #785414;
-      font-size: 17px;
-      font-weight: 800;
-      transform: rotate(-4deg);
+    main::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 7px;
+      background: var(--burgundy);
     }
-    .avatar {
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 44px;
+    }
+    .eyebrow {
+      margin: 0;
+      color: var(--burgundy);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+    .monogram {
       display: grid;
       place-items: center;
-      width: 100px;
-      height: 100px;
-      margin: 0 auto 20px;
-      border: 5px solid white;
-      border-radius: 32px;
-      background: linear-gradient(140deg, #ffadd0, #c9b5ff);
-      box-shadow: 0 8px 0 #f0e6ff;
-      font-size: 52px;
-      transform: rotate(5deg);
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--burgundy);
+      font-family: Georgia, serif;
+      font-size: 21px;
+      font-style: italic;
     }
     h1 {
       margin: 0;
-      color: #c72a74;
-      font-size: clamp(42px, 12vw, 54px);
-      line-height: 1.2;
-      letter-spacing: -2px;
+      color: var(--burgundy);
+      font-family: "Nanum Myeongjo", "Batang", serif;
+      font-size: clamp(44px, 12vw, 56px);
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: 2px;
     }
     .role {
-      display: inline-block;
-      margin: 14px 0;
-      padding: 7px 16px;
-      border-radius: 14px;
-      background: #ece5ff;
-      color: #6840ae;
-      font-size: 23px;
-      font-weight: 800;
+      margin: 14px 0 26px;
+      color: var(--burgundy);
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 4px;
     }
     .intro {
-      margin: 8px 0 0;
+      margin: 0;
       font-size: 21px;
-      line-height: 1.65;
-      word-break: keep-all;
+      line-height: 1.8;
+      letter-spacing: -0.5px;
     }
-    section { margin: 32px 0; }
+    .accent {
+      width: 40px;
+      height: 2px;
+      margin: 30px 0 0;
+      background: var(--gold);
+    }
+    section { margin: 36px 0 40px; }
     h2 {
       margin: 0 0 18px;
-      font-size: 24px;
-      text-align: center;
+      color: var(--muted);
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 1px;
     }
-    ul {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+    ol {
       margin: 0;
       padding: 0;
       list-style: none;
+      border-top: 1px solid var(--line);
     }
     li {
-      min-height: 132px;
-      padding: 18px 10px;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      border: 2px solid #46305d0c;
-      border-radius: 24px;
+      gap: 22px;
+      padding: 19px 2px;
+      border-bottom: 1px solid var(--line);
       font-size: 26px;
-      font-weight: 800;
+      font-weight: 500;
     }
-    li:nth-child(1) { background: #ffe0ed; color: #a92c63; }
-    li:nth-child(2) { background: #fff0b8; color: #775211; }
-    li:nth-child(3) { background: #e9dfff; color: #65409d; }
-    li:nth-child(4) { background: #d2f5ec; color: #216d59; }
-    .emoji { font-size: 34px; }
+    .number {
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 18px;
+      font-style: italic;
+    }
     footer { margin-top: auto; }
     button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       width: 100%;
       min-height: 66px;
-      padding: 17px;
-      border: 0;
-      border-radius: 22px;
-      background: linear-gradient(110deg, #b72e76, #7947c6);
-      box-shadow: 0 6px 0 #602c88;
-      color: white;
+      padding: 18px 24px;
+      border: 1px solid var(--burgundy);
+      border-radius: 3px;
+      background: var(--burgundy);
+      color: var(--ivory);
       font: inherit;
-      font-size: 25px;
-      font-weight: 800;
+      font-size: 23px;
+      font-weight: 600;
       cursor: pointer;
       touch-action: manipulation;
-      transition: transform .15s, box-shadow .15s;
+      transition: background .2s;
     }
-    button:active {
-      transform: translateY(4px);
-      box-shadow: 0 2px 0 #602c88;
-    }
+    button:hover { background: #511c2b; }
     button:focus-visible {
-      outline: 3px solid #65409d;
-      outline-offset: 6px;
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
     }
     #message {
-      margin: 20px 0 0;
+      margin: 18px 0 0;
+      color: var(--muted);
       font-size: 18px;
-      line-height: 1.5;
-      text-align: center;
-      word-break: keep-all;
-    }
-    .sign {
-      margin: 20px 0 0;
-      color: #786486;
-      font-size: 15px;
-      text-align: center;
+      line-height: 1.6;
     }
     @media (max-width: 350px) {
-      main { padding: 28px 18px 24px; }
-      li { font-size: 23px; }
+      body { padding: 16px 12px; }
+      main {
+        padding: 32px 22px 24px;
+        min-height: calc(100svh - 32px);
+      }
       .intro { font-size: 19px; }
+      .topline { margin-bottom: 32px; }
     }
   </style>
 </head>
 <body>
-  <main>
+  <main aria-label="김민지 모바일 명함">
     <header>
-      <p class="badge">반가워요! 제 명함에 오신 걸 환영해요 💛</p>
-      <div class="avatar" aria-hidden="true">✈️</div>
+      <div class="topline">
+        <p class="eyebrow">PERSONAL CARD</p>
+        <span class="monogram" aria-hidden="true">M</span>
+      </div>
       <h1>김민지</h1>
-      <p class="role">승무원 ☁️</p>
+      <p class="role">승무원</p>
       <p class="intro">
-        하늘 위에서도 밝은 미소로!<br>
-        설레는 여행을 함께하는 김민지입니다.
+        세심한 배려와 따뜻한 미소로<br>
+        편안한 여정을 함께합니다.
       </p>
+      <div class="accent" aria-hidden="true"></div>
     </header>
-
     <section aria-labelledby="work-title">
-      <h2 id="work-title">내가 하는 일 ✨</h2>
-      <ul>
-        <li><span class="emoji" aria-hidden="true">🎵</span>랄랄랄</li>
-        <li><span class="emoji" aria-hidden="true">🎉</span>유후</li>
-        <li><span class="emoji" aria-hidden="true">💡</span>아하</li>
-        <li><span class="emoji" aria-hidden="true">🌈</span>아하</li>
-      </ul>
+      <h2 id="work-title">내가 하는 일</h2>
+      <ol>
+        <li><span class="number">01</span>랄랄랄</li>
+        <li><span class="number">02</span>유후</li>
+        <li><span class="number">03</span>아하</li>
+        <li><span class="number">04</span>아하</li>
+      </ol>
     </section>
-
     <footer>
-      <button id="contact" type="button">문의하기 💌</button>
+      <button id="contact" type="button">
+        문의하기 <span aria-hidden="true">↗</span>
+      </button>
       <p id="message" role="status" hidden></p>
-      <p class="sign">오늘도 반짝이는 하루 보내세요 ✨</p>
     </footer>
   </main>
-
   <script>
-    // 문의받을 이메일 주소를 아래 따옴표 안에 입력하세요.
+    // 문의받을 이메일 주소를 입력하세요.
     const email = "";
     document.getElementById("contact").addEventListener("click", () => {
       if (email.trim()) {
         const subject = encodeURIComponent("김민지님께 문의드립니다");
-        location.href = `mailto:${email.trim()}?subject=${subject}`;
+        window.location.href = `mailto:${email.trim()}?subject=${subject}`;
       } else {
         const message = document.getElementById("message");
-        message.textContent = "문의 이메일을 준비 중이에요 💌";
+        message.textContent = "문의 연락처를 준비 중입니다.";
         message.hidden = false;
       }
     });
